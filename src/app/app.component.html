@@ -1,0 +1,49 @@
+<div class="grid-contaiter">
+
+  <div class="header">
+     <p>Мои заметки</p>
+  </div>
+
+  <div class="list-of-notes">
+
+    <div class="note"  *ngFor="let item of titles; let i = index" 
+      [style.background-color]="stateNote[i]? 'rgb(47,102,255)' : 'white'"
+      [style.color]="!stateNote[i]? 'black' : 'white'"
+     (click)="openNote(i)">
+      <p>{{item}}</p>
+    </div>
+
+    <div class="note" 
+    [style.background-color]="stateAddButton? 'rgb(47,102,255)' : 'white'"
+    [style.color]="!stateAddButton? 'black' : 'white'"
+    (click)="recordNote()">
+      <p>Добавить заметку</p>
+    </div>
+
+  </div>
+
+  <div class="area-of-notes">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+
+<div class="blackout"  [style.visibility]="showInput ? 'visible' : 'hidden'" >
+
+  <div class="modal">
+
+    <div class="textarea">
+      <textarea id="text" a name="note" [(ngModel)]="newNote"></textarea>
+    </div>
+
+    <div class="cancel_but" (click)="cancel()">
+      <p>Закрыть</p>
+    </div>
+
+   <div class="ok_but" (click)="create()" >
+      <p>Добавить</p>
+    </div>
+
+  </div>
+
+</div>

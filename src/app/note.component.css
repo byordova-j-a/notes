@@ -1,0 +1,18 @@
+div{
+    margin:0px 70px 10px 25px;
+  }
+
+h1{ 
+    font-family: sans-serif, 'Times New Roman', Times, serif;
+    color:rgb(47,102,255);   
+  }
+
+pre{  
+    font-family: sans-serif, 'Times New Roman', Times, serif;
+    white-space:pre-wrap;
+    word-wrap: break-word;
+}
+
+p{
+    white-space: pre-line
+}
